@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const button = document.querySelector("#submit-btn");
 button.addEventListener('click', () => {
-    let username = document.querySelector("#username").value;
     let passwordValidate = document.querySelector("#password").value;
     let validation = document.querySelector("#validate-display")
     passwordValidate.length <= 8 ? validation.innerHTML = "Your password is too short": validation.style.display = "none"
@@ -68,6 +67,14 @@ for( let details of [username, password]){
         loginDetails[e.target.name] = this.value;
     })
 }
+
+// this is to prevent the submit button from refreshing the page
+
+const Account = document.querySelector('#createAccount')
+ Account.addEventListener('submit', function(e){e.preventDefault();})
+     
+
+
 
 
 
